@@ -1,0 +1,12 @@
+{
+    "fields": {
+        "consumer": [
+            "Phone Number", "Given Names", "Sur name", "Email"
+        ],
+        "shipping": [
+            "Street Name", "Street Number", "City", "State", "Zip Code"
+        ],
+        "payments":["Amount"],
+        "totalAmount": ["37.00", "USD"]
+    }
+}

@@ -1,0 +1,184 @@
+/*
+  Decided to use SASS but I didnt use it at all 
+  I wanted something simple so I didnt use css that much, because 
+  usually takes a lot of time.
+
+  Decided to create a clean view.
+  Used the grid to avoid have problems with small screens.
+  Everything was done using movile first.
+
+
+  Added a small animation but I tried to keep it clean and neat.
+*/
+
+input {
+    border: none;
+    border-color: transparent;
+    border-bottom: 1px solid black;
+}
+
+span {
+    vertical-align: text-top;
+}
+
+.header__container {
+    grid-template-columns: auto;
+    margin: 1em auto;
+}
+
+.header__container--logo {
+    width: 100%;
+    background-image: url("./img/after_pay.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50px;
+    background-size: contain;
+    animation: moveLogo 2s ease;
+}
+
+.main__container--address {
+    width: 50%;
+    margin: 1em auto;
+    border: 1px solid #16a0d520;
+    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+    animation: opacityIn 3s ease-in-out;
+}
+
+.main__container--header {
+    padding: 1em;
+    font-weight: bold;
+    border-bottom: 1px solid #00000090;
+    margin-bottom: 1em;
+    background-image: linear-gradient(to bottom, #fff, #f9f9f9);
+
+}
+.form__container {
+    width: 100%;
+    display: inline-grid;
+    grid-template-columns: 49% 2% 49%;
+    margin: 0 auto;
+    height: 2.5em;
+}
+
+.form__container--column-label {
+    text-align: right;
+    grid-template-columns: auto 1em auto;
+    padding-right: 1em;
+
+}
+
+.form__container--column-middle {
+    grid-template-columns: auto 1em auto;
+
+}
+
+.form__container--column-field {
+    grid-template-columns: auto 1em auto;
+    padding-left: 1em;
+
+}
+.form__container--input {
+    height: 2.5em;
+    &:focus {
+      border-color: inherit;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      outline: none;
+    }
+    &:hover{
+      cursor: pointer;
+    }
+}
+
+
+.main__container--button,
+.main__container--button-payment {
+    width: 100%;
+    position: relative;
+    button {
+        margin: 0 auto;
+        text-align: center;
+        height: 4em;
+        width: 8em;
+        background-color: #16a0d5;
+        color: white;
+        font-size: 1rem;
+        border-bottom-right-radius: 2em;
+        border-top-right-radius: 2em;
+        position: fixed;
+        bottom: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: moveButton 2s ease-out;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    
+}
+
+.main__container--complete {
+  text-align: center;
+  background-color: #16a0d5;
+  color: white;
+}
+
+.main__container--button-payment button{
+  background-color: #d54b16;
+  top:40%;
+}
+
+.main__container--error {
+  color: #FF0000;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+@media only screen and (min-device-width : 375px) and (max-device-width : 812px) and (-webkit-device-pixel-ratio : 3) {
+    .main__container--address {
+        width: 100%;
+    }
+}
+
+@keyframes opacityIn {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes moveLogo {
+  0% {
+    opacity: 0;
+    transform: translateX(-20rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+
+@keyframes moveButton {
+  0% {
+    opacity: 0;
+    transform: translateX(20rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-50%)
+  }
+}
